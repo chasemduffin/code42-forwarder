@@ -1,0 +1,38 @@
+---
+
+- name: Install requisite packages
+  yum:
+    name: "{{ packages }}"
+    state: latest
+  vars:
+    packages:
+    - python-pip
+    - python3
+    - dbus-python
+    - dbus-x11
+  become: yes
+
+- name: Install Code42 CLI
+  pip:
+    name: code42cli
+  become: yes
+
+- name: Delete existing profiles
+  expect:
+    command: code42 profile delete-all
+    responses:
+      sure: y
+
+- name: Create forwarder profile setting password interactively
+  expect:
+    command: code42 profile create --name "{{ profile }}" --server "{{ server }}" --username "{{ username }}"
+    responses:
+      password: y
+      Password: "{{ secret }}"
+      keyring: y
+
+- name: Create a cron job to send security data to Arctic Wolf daily at midnight
+  cron:
+    name: forward-logs
+    hour: "0"
+    job: code42 security-data send-to "{{ destination }}" -p TCP -f CEF --profile "{{ profile }}" -i -b "{{ begin }}"
