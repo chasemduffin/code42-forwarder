@@ -3,7 +3,7 @@
 - name: Install requisite packages
   yum:
     name: "{{ packages }}"
-    state: latest
+    state: present
   vars:
     packages:
     - python-pip
