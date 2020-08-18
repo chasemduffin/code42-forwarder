@@ -8,7 +8,7 @@ More information can be found at https://support.code42.com/Administrator/Cloud/
 Requirements
 ------------
 
-- A subscription to the Code42 Insider Threat Platform.
+- A subscription to the Code42 Insider Threat Platform
 - A password authenticated user in your Code42 org with the required permissions outlined in the Code42 documentation.
 - A RHEL-like OS (for yum)
 
@@ -23,10 +23,10 @@ Role Variables
 
   code42 security-data print -b 2020-04-28 
 - destination: Send to a server address, for example, "https://syslog.example.com:514"
-- username: The username of your Code42 user.
+- username: The username of your Code42 user
 - profile: The desired name of your CLI profile
-- server: Your Code42 server URL, for example "https://www.crashplanpro.com/"
-- secret: Your Code42 password encrypted with Ansible Vault or otherwise.
+- server: Your Code42 server URL, for example "https://www.console.us.code42.com/"
+- secret: Your encrypted Code42 authentication secret
 
 Example Playbook
 ----------------
