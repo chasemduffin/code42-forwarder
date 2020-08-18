@@ -33,6 +33,7 @@ Example Playbook
 
 `ansible-playbook -i "0.0.0.0," -u centos run-role.yml --vault-password-file=~/.ansible_vault_password`
 
+```
 ---
 
 - name: Run the specified role against the specified remote host
@@ -42,6 +43,7 @@ Example Playbook
     - name: run the following configuration role
       include_role:
         name: code42-forwarder
+```
 
 
 License
