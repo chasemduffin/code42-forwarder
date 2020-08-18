@@ -5,4 +5,4 @@ destination: "your destination address:514"
 username: "your Code42 username"
 profile: "your desired profile name"
 server: "your server URL"
-secret: your Ansible Vault inline password
+secret: "Your encrypted Code42 password"
