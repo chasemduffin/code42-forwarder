@@ -25,7 +25,9 @@
 
 - name: Create forwarder profile setting password interactively
   expect:
-    command: code42 profile create --name "{{ profile }}" --server "{{ server }}" --username "{{ username }}"
+    command: code42 profile create --name "{{ profile }}" >
+                                   --server "{{ server }}" >
+                                   --username "{{ username }}"
     responses:
       password: y
       Password: "{{ secret }}"
@@ -34,5 +36,10 @@
 - name: Create a cron job to send security data to Arctic Wolf daily at midnight
   cron:
     name: forward-logs
-    hour: "0"
-    job: code42 security-data send-to "{{ destination }}" -p TCP -f CEF --profile "{{ profile }}" -i -b "{{ begin }}"
+    hour: "{{ hour }}"
+    job: code42 security-data send-to "{{ destination }}" >
+                                    -p TCP
+                                    -f CEF >
+                                    -b "{{ begin }}" >
+                                    --profile "{{ profile }}" -i
+                                    
