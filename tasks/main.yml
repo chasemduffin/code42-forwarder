@@ -38,8 +38,7 @@
     name: forward-logs
     hour: "{{ hour }}"
     job: code42 security-data send-to "{{ destination }}" >
-                                    -p TCP
-                                    -f CEF >
+                                    -p {{ protocol }}
+                                    -f {{ format }} >
                                     -b "{{ begin }}" >
                                     --profile "{{ profile }}" -i
-                                    
