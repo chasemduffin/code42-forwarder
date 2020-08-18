@@ -1,6 +1,7 @@
 ---
 
 begin: "90d"
+format: "CEF"
 hour: "0"
 protocol: "tcp"
-format: "CEF"
+remote_user: "centos"
