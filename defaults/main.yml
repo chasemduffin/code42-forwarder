@@ -1,6 +1,6 @@
 ---
 
-begin: 90d
-hour: 0
-protocol: tcp
-format: CEF
+begin: "90d"
+hour: "0"
+protocol: "tcp"
+format: "CEF"
