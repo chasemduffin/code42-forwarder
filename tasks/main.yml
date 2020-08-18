@@ -39,6 +39,6 @@
     hour: "{{ hour }}"
     job: code42 security-data send-to "{{ destination }}" >
                                     -p "{{ protocol }}"
-                                    -f "{{ format }}"" >
+                                    -f "{{ format }}" >
                                     -b "{{ begin }}" >
                                     --profile "{{ profile }}" -i
