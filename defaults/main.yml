@@ -3,5 +3,6 @@
 begin: "90d"
 format: "CEF"
 hour: "0"
+minute: "0"
 protocol: "tcp"
 remote_user: "centos"
