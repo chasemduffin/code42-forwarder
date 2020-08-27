@@ -38,6 +38,7 @@
   cron:
     name: forward-logs
     hour: "{{ hour }}"
+    minute: "{{ minute }}"
     job: code42 security-data send-to "{{ destination }}" >
                                     -p "{{ protocol }}"
                                     -f "{{ format }}" >
