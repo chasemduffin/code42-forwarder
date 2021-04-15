@@ -34,7 +34,7 @@
       Password: "{{ secret }}"
       keyring: y
 
-- name: Create a cron job to send security data to Arctic Wolf daily at midnight
+- name: Create a cron job to send security data to destination daily at midnight
   cron:
     name: forward-logs
     hour: "{{ hour }}"
