@@ -54,5 +54,4 @@ BSD-3-Clause
 Author Information
 ------------------
 
-- chasemduffin.com
-- h3biomedicine.com
+- cmd.bio
